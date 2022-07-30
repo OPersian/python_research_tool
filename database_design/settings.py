@@ -72,7 +72,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'database_design.wsgi.application'
 
-DB_NAME = getenv('DB_NAME', 'poster_admin')
+DB_NAME = getenv('DB_NAME', 'postgres')
 DB_USER = getenv('DB_USER', 'postgres')
 DB_PASSWORD = getenv('DB_PASSWORD', 'postgres')
 DB_HOST = getenv('DB_HOST', 'db')
