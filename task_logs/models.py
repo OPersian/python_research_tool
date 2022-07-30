@@ -96,8 +96,8 @@ class Log(CommonInfo):
     task_data_size_id = models.ForeignKey(TaskDataSize, on_delete=models.RESTRICT)
     mode_id = models.ForeignKey(Mode, on_delete=models.RESTRICT)
     cpu_id = models.ForeignKey(Cpu, on_delete=models.RESTRICT)
-    measurable_start_time = models.DateTimeField(auto_now=True)
-    measurable_end_time = models.DateTimeField(auto_now=True)
+    measurable_start_time = models.DateTimeField(null=True)
+    measurable_end_time = models.DateTimeField(null=True)
     duration_nano_sec = models.PositiveBigIntegerField(null=True)
     space_taken_bytes = models.PositiveBigIntegerField(null=True)
 
