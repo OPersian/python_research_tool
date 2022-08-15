@@ -30,16 +30,22 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 # Application definition
+EXTERNAL_APPS = ()
 
-INSTALLED_APPS = [
+CUSTOM_APPS = (
+    'task_logs',
+)
+
+DEFAULT_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'task_logs',
-]
+)
+
+INSTALLED_APPS = EXTERNAL_APPS + CUSTOM_APPS + DEFAULT_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

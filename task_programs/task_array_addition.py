@@ -29,7 +29,9 @@ LARGE = 300000
 # Value to add to every array element.
 VALUE_TO_ADD = 10
 
-MEASUREMENTS_NUMBER = 100  # TODO use it
+SMALL_MEASUREMENTS_NUMBER = 10
+MEDIUM_MEASUREMENTS_NUMBER = 100
+LARGE_MEASUREMENTS_NUMBER = 500
 
 # Value used for relative measurement
 SECONDS_TO_WAIT = 2
@@ -37,15 +39,22 @@ SECONDS_TO_WAIT = 2
 
 class ArrayAdditionTaskConfig(TaskConfig):
     """
-    The Array Addition Task Configuration Interface.
+    The Array Addition Task Configuration logic.
     """
 
     small_size = SMALL
     medium_size = MEDIUM
     large_size = LARGE
 
+    small_measurements_number = SMALL_MEASUREMENTS_NUMBER
+    medium_measurements_number = MEDIUM_MEASUREMENTS_NUMBER
+    large_measurements_number = LARGE_MEASUREMENTS_NUMBER
+
 
 class ArrayAdditionTask(Task):
+    """
+    The Array Addition Task logic.
+    """
 
     # TODO incorporate measurements value into the client code
     def __init__(

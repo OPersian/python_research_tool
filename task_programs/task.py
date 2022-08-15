@@ -30,6 +30,7 @@ class TaskConfig(ABC):
     # TODO make it enum-like, closer to enum (made for validation!)
 
 
+# TODO do we need inheritance from TaskConfig and why?
 class Task(ABC, TaskConfig):
     """
     The Task Interface for all tasks to follow.
