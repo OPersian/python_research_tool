@@ -30,8 +30,12 @@ class Task(CommonInfo):
     def __str__(self):
         return f"Task : {self.id}"
 
+# TODO TaskConfig
+#  measurements_number
+
 
 class DataType(CommonInfo):
+    # TODO introduce choices, move to TaskConfig as a field
     data_type_title = models.CharField(max_length=128)
 
     class Meta:
@@ -100,6 +104,7 @@ class Log(CommonInfo):
     measurable_end_time = models.DateTimeField(null=True)
     duration_nano_sec = models.PositiveBigIntegerField(null=True)
     space_taken_bytes = models.PositiveBigIntegerField(null=True)
+    # TODO add relative measurement (specific to tasks)
 
     class Meta:
         db_table = "log"
