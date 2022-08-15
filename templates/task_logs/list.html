@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "css/main.css" %}">
+    <title>Python Research Tool</title>
+</head>
+<body>
+    {% if tasks_list %}
+        <ul>
+        {% for task in tasks_list %}
+{% comment %}
+            <li><a href="/task_logs/{{ task.id }}/">{{ task.task_title }}</a></li>
+{% endcomment %}
+            <li><a href="{% url 'task_logs:task_detail' task.id %}">{{ task.task_title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Configure and run tasks to see them appear in the list!</p>
+    {% endif %}
+</body>
+</html>

@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from python_research_tool import views
 
 urlpatterns = [
-    path("task_logs/", include("task_logs.urls")),
-
+    path("tasks/", include("task_logs.urls")),
     path('admin/', admin.site.urls),
+    path('', views.IndexView.as_view(), name='index'),
 ]

@@ -105,6 +105,7 @@ class Log(CommonInfo):
     duration_nano_sec = models.PositiveBigIntegerField(null=True)  # TODO change to seconds, for now
     space_taken_bytes = models.PositiveBigIntegerField(null=True)  # TODO not yet supported
     # TODO add relative measurement (specific to tasks)
+    # TODO add "canceled by a user" field
 
     class Meta:
         db_table = "log"
