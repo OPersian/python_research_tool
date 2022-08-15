@@ -1,8 +1,7 @@
-from django.shortcuts import render
+"""
+Task logs views.
+"""
 from django.views import generic
-
-# Create your views here.
-
 
 from task_logs.models import Task
 
