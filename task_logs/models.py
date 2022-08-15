@@ -102,8 +102,8 @@ class Log(CommonInfo):
     cpu_id = models.ForeignKey(Cpu, on_delete=models.RESTRICT)
     measurable_start_time = models.DateTimeField(null=True)
     measurable_end_time = models.DateTimeField(null=True)
-    duration_nano_sec = models.PositiveBigIntegerField(null=True)
-    space_taken_bytes = models.PositiveBigIntegerField(null=True)
+    duration_nano_sec = models.PositiveBigIntegerField(null=True)  # TODO change to seconds, for now
+    space_taken_bytes = models.PositiveBigIntegerField(null=True)  # TODO not yet supported
     # TODO add relative measurement (specific to tasks)
 
     class Meta:

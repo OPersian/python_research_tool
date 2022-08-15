@@ -10,11 +10,11 @@ Available tasks' parameters are as follows:
 - data size;
 - data type.
 
-Tasks can be configured and run from <URL-TBD>.
+Tasks can be configured and run from URL-TBD.
 
 The research itself is the results of programs execution: time taken and space taken.
 
-CSV reports with results are available for download from <URL-TBD>.
+CSV reports with results are available for download from URL-TBD.
 
 ### Application Requirements
 

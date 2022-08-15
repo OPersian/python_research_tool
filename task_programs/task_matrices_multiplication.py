@@ -3,10 +3,15 @@ Task on 2D matrices' multiplication, w/ and w/o user-defined objects.
 
 Matrices' sizes to check (elements): 512, 1024, 2048.
 """
-import sys
 import time
 from typing import Optional
 from numbers import Number
+
+
+from task_programs.constants import (
+    FILLER_INT,
+    MAX_NUMBER,
+)
 
 # Matrix sizes
 SMALL = 512
@@ -16,12 +21,11 @@ LARGE = 2048
 # MEDIUM = 400
 # LARGE = 1024
 
-# Filler numbers to populate matrices with.
-FILLER_INT = 10
-FILLER_FLOAT = 10.0
-
-MAX_NUMBER = sys.maxsize
 MEASUREMENTS_NUMBER = 100
+
+
+# TODO MatricesMultiplicationTaskConfig
+# TODO MatricesMultiplicationTask
 
 
 class Matrix:
@@ -141,68 +145,3 @@ def multiply_oop(matrix_size, fill=FILLER_INT):
     """
     x, y = create_matrices(matrix_size, fill=fill)
     return x.multiply(y)
-
-
-def task_02_runner(fill, matrix_size=None):
-    if matrix_size:
-        res_func_3 = multiply_func(matrix_size, fill=fill)
-        res_oop_3 = multiply_oop(matrix_size, fill=fill)
-    else:
-        res_func_3 = multiply_func(LARGE, fill=fill)
-        res_oop_3 = multiply_oop(LARGE, fill=fill)
-
-    if not matrix_size:
-        res_func_1 = multiply_func(SMALL, fill=fill)
-        res_oop_1 = multiply_oop(SMALL, fill=fill)
-        res_func_2 = multiply_func(MEDIUM, fill=fill)
-        res_oop_2 = multiply_oop(MEDIUM, fill=fill)
-
-    # Commented out for the sake of clean output
-    # print("Ensure multiplication went right (equal results): ")
-    # print("{} x {} func: ".format(LARGE, LARGE))
-    # for r in res_func_3[0]:
-    #     print(r)
-    # print("{} x {} oop: ".format(LARGE, LARGE))
-    # print(res_oop_3[0])
-
-    if not matrix_size:
-        print("{} x {} matrices".format(SMALL, SMALL))
-        print("Func took {} sec".format(res_func_1[1]))
-        print("OOP took {} sec".format(res_oop_1[1]))
-        print("OOP to func: {}\n".format(res_oop_1[1] / res_func_1[1]))
-
-        print("{} x {} matrices".format(MEDIUM, MEDIUM))
-        print("Func took {} sec".format(res_func_2[1]))
-        print("OOP took {} sec".format(res_oop_2[1]))
-        try:
-            print("Func {} to {}: {}".format(MEDIUM, SMALL, res_func_2[1] / res_func_1[1]))
-            print("OOP {} to {}: {}".format(MEDIUM, SMALL, res_oop_2[1] / res_oop_1[1]))
-            print("OOP to func: {}\n".format(res_oop_2[1] / res_func_2[1]))
-        except ZeroDivisionError:
-            pass
-
-        print("{} x {} matrices".format(LARGE, LARGE))
-        print("Func took {} sec".format(res_func_3[1]))
-        print("OOP took {} sec".format(res_oop_3[1]))
-
-    else:
-        print("{} x {} matrices".format(matrix_size, matrix_size))
-        print("Func took {} sec".format(res_func_3[1]))
-        print("OOP took {} sec".format(res_oop_3[1]))
-
-    try:
-        if not matrix_size:
-            print("Func {} to {}: {}".format(LARGE, SMALL, res_func_3[1] / res_func_1[1]))
-            print("OOP {} to {}: {}".format(LARGE, SMALL, res_oop_3[1] / res_oop_1[1]))
-        print("OOP to func: {}".format(res_oop_3[1] / res_func_3[1]))
-    except ZeroDivisionError:
-        pass
-
-
-def task_02():
-    """
-    Solution for the task #2.
-
-    Task 8 (Debug vs Release)
-    """
-    task_02_runner(fill=FILLER_INT)
