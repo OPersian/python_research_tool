@@ -1,5 +1,5 @@
 """
-ASGI config for database_design project.
+ASGI config for python_research_tool project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'database_design.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'python_research_tool.settings')
 
 application = get_asgi_application()

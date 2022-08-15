@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    container_name: database_design
+    container_name: python_research_tool
     build:
       context: .
       dockerfile: Dockerfile
@@ -23,7 +23,7 @@ services:
       - .env
 
   db:
-    container_name: database_design_postgres
+    container_name: python_research_tool_postgres
     image: postgres:14.2
     env_file:
       - .env
